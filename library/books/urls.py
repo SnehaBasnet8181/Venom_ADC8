@@ -27,3 +27,9 @@ urlpatterns = [
     path('customerdata/',view_customer_lists),
     path('customerdata/customerdelete/<int:ID>',view_customer_delete),
     path('customerdata/customerupdate/<int:ID>',view_customer_update),
+
+       path('signup/',view_register_user),
+    path('logout/',view_logout),
+    path('login',view_authenticate_user, name="login"),
+
+] 
