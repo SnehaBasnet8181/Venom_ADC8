@@ -212,3 +212,40 @@ def view_pic(request):
     users=picture.objects.all()
     p=users[len(users)-1].pic
     return render(request, 'image.html',{'users':users})
+
+
+      #Sign UP
+def view_register_user(request):
+    if request.method=="POST":
+        print(request.POST)
+        user =User.objects.create_user(username=request.POST['input_username'],
+        password=request.POST['input_password'],email=request.POST['input_email'])
+        user.save()
+
+        return HttpResponse("SIGNUP SUCESSFUL")
+        
+    else:
+        return render(request,'registration/registration.html')
+
+          #LOG OUT
+def view_logout(request):
+    if(not request.user.is_authenticated):
+     return HttpResponseForbidden('Please login to logout!')
+     logout(request)
+     return redirect('login')
+
+         #LOG IN 
+def view_authenticate_user(request):
+    if request.method=="GET":
+        return render(request,'registration/login.html')
+    else:
+
+     print(request.POST)
+     user=authenticate(email=request.POST['input_email'],password=request.POST['input_password'])
+     print(user)
+    if user is not None:
+        login(request,user)
+        return render(request,'registration/page.html')
+    else:
+        return redirect("registration/login.html")
+    
