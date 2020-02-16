@@ -16,7 +16,7 @@ urlpatterns = [
     path('bookdata/',view_book_lists),
     path('bookdata/bookdelete/<int:ID>',view_book_delete),
     path('bookdata/bookupdate/<int:ID>',view_book_update),
-    path('search.html',search),
+    
 
 
     path('uploadFIle/',upload),
