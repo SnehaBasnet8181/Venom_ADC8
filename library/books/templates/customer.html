@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href={%static 'css/design.css' %}>
+
+    <title>Customer Data</title>
+
+</head>
+<body>
+    <h2>Customer Form</h2>
+    <div class="design">
+        {% block content %}
+    <form action="save" method ="POST">
+        {% csrf_token %}
+
+        Enter customername : <input type="text" name="customer_CustomerName"> <br>
+        Enter customeremail : <input type="text" name="customer_CustomerEmail"> <br>
+        Enter customerphoneno : <input type="int" name="customer_CustomerPhoneNo"> <br>
+        Enter customeraddress : <input type="text" name="customer_CustomerAddress"> <br>
+
+        <input type="SUBMIT">
+    </form>
+    </div>
+    
+    {% endblock %}
+
+    
+</body>
+</html>

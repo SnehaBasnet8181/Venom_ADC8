@@ -1,0 +1,119 @@
+ <!-- <!DOCTYPE html>
+<html>
+ 	<title>browse</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href={%static 'css/header&nav_css.css' %}>
+	<link href={%static 'https://fonts.googleapis.com/css?family=Itim' %} rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href={%static 'css/browse.css' %}>
+	<link href={%static 'https://fonts.googleapis.com/css?family=Indie+Flower' %} rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href={%static 'css/footer.css' %}>
+	<script type="text/javascript" src={%static 'Jquery.js'>
+		$(document).ready(function(){
+ 		 $("p").click(function(){
+   		 $(this).hide();
+  		});
+});
+	</script>
+	<style>
+		table, th, td {
+  		border: 3px solid black;
+ 	 	
+</style>
+</head>
+<body>
+<header>
+	{% block pagecontent %}
+		<a href="index.html"><img src={%static 'img/a.png' class="logo"></a>
+		<div class="header" style="text-align=left;,position:fixed;"> <h1 >Pustakalaya</h1></div>
+	
+	<div class="nav">
+		
+	<ul>
+
+		<a href="index.html" class="home"><li >Home</li></a>
+		
+		<a href="browse.html" class="browse"><li>browse</li></a>
+		
+		<a href="MyBooks.html" class="MyBooks"><li>MyBooks</li></a>
+	
+		<li><div class="dropdown">
+    		<button class="dropbtn">More
+      		<i class="fa fa-caret-down"></i>
+    		</button>
+    		<div class="dropdown-content">
+      			<a href="index.html" class="home">Home</a>
+		
+				<a href="browse.html" class="browse">browse</a>	
+		
+				<a href="MyBooks.html" class="MyBooks">MyBooks</a>
+
+				<a href="register.html" class="register">Register</a>
+    		</div>
+  		</div>
+		
+
+		
+	</ul>
+</div>
+</header>
+
+
+<main style="float: right; padding: 10px;">
+	<div class="search" >
+  <input type="search" class="search-box" placeholder="Search...." />
+  <span class="search-button">
+    <span class="search-icon"></span>
+  </span>
+</div> 
+
+<script type="text/javascript">
+	$('.search-button').click(function(){
+  		$(this).parent().toggleClass('open');
+	});
+</script>
+	<div class="booklist">
+	<h1 style="text-align:center;">Ebooks</h1>
+		<div class="Ebooks" >
+			    {browse_book} 
+			<button>Book Now</button>
+			<button>Read now</button>
+		</div>
+		<div class="Ebooks" >
+			    {browse_book} 
+			<button>Book Now</button>
+			<button>Read now</button>
+		</div>
+		<div class="Ebooks" >
+			    {browse_book} 
+			<button>Book Now</button>
+			<button>Read now</button>
+		</div>
+		<div class="Ebooks" >
+			    {browse_book} 
+			<button>Book Now</button>
+			<button>Read now</button>
+		</div>
+		<div class="Ebooks" >
+			    {browse_book} 
+			<button>Book Now</button>
+			<button>Read now</button>
+		</div>
+  		<div class="Ebooks" >
+			    {browse_book} 
+			<button>Book Now</button>
+			<button>Read now</button>
+		</div>
+		<div class="Ebooks" >
+			    {browse_book} 
+			<button>Book Now</button>
+			<button>Read now</button>
+		</div>
+
+	
+</main>
+<div class="Ad">
+		<font color=white><h2>Advertisement</h2></font>
+	</div>
+<footer>&copy; 2020 Venom_ADC8</footer>
+{% endblock %}
+</body>	   -->

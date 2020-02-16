@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--head, header, and footer section are same in all webpage-->
+	<title>Home</title>
+	<!--links for importing .css files and fonts  -->
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href={%static 'css/header&nav_css.css' %}>
+	<link href={%static 'https://fonts.googleapis.com/css?family=Itim' %} rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href={%static 'css/index.css' %}>
+	<link href={%static 'https://fonts.googleapis.com/css?family=Indie+Flower' %} rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href={%static 'css/footer.css' %}>
+</head>
+<body>
+{% block pagecontent %}
+<!-- The header section starts which contains the logo and naviation bar -->
+	<header>
+	
+		<a href="index.html"><img src={%static 'img/a.png' class="logo"></a>
+		<div class="header" style="text-align=left;,position:fixed;"> <h1>Pustakalaya</h1></div>
+	
+	<div class="nav">
+		
+	<ul>
+
+		<a href='/book/bookdata/' class="Book Data"><li >Book Data</li></a>
+		
+		<a href="search.html" class="Browse"><li>Browse</li></a>		
+
+		<a href='/book/book/' class="MyBooks"><li>Add Book</li></a>
+		
+		<li><div class="dropdown">
+    		<button class="dropbtn">More
+      		<i class="fa fa-caret-down"></i>
+    		</button>
+    		<div class="dropdown-content">
+				  <a href="/book/customer/" class="Customer Form">CustomerForm</a>
+				  <a href="/book/customerdata/" class="CustomerData">CustomerData</a>	
+		
+		
+				<a href='/book/bookdata/' class="MyBooks">Books</a>
+
+				<a href="/book/uploadFIle/" class="Upload">Upload</a>
+    		</div>
+  		</div>
+		
+
+		
+	</ul>
+</div>
+</header>
+<!-- This is the content of the web page -->
+	<content>
+		<h1>Welcome To Our Library</h1><br><br>
+		
+	<!-- these are icons -->
+	<div class="icons" style="overflow-x:auto;">
+		<ul>
+	<li><a href=/book/image><img src={%static 'img/Books.png' %} class="icnlogo" alt="Book Image"></a><br>Book Image</li>
+	<li><a href=/book/login><img src={%static 'img/MyBooks.png' %} class="icnlogo" alt="login"></a><br>Login</li>
+	<li><a href=/book/signup><img src={%static 'img/Reg.png' %} class="icnlogo" alt="Registration"></a><br>Registration</li>
+</ul>
+	</div>
+	</content>
+	<!-- footer which is available in all web pages -->
+	<footer>&copy; 2020 Venom_ADC8</footer>
+	<script type={%static 'text/javascript' %}>
+		
+	</script>
+	{% endblock %}
+
+</body>
+</html>

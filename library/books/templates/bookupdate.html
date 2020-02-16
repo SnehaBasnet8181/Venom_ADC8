@@ -1,0 +1,39 @@
+{% extends 'book.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>update</title>
+</head>
+<body>
+    {% block content %}
+
+        <h1> List of patient</h1>
+        {% for patient in patients %}
+        bookname : {{book.bookname}} <br>
+        author: {{book.author}} <br>
+        price: {{book.price}}<br>
+        describe: {{book.describe}}<br>
+
+        {% empty %}
+
+        <form method="post">
+            {% csrf_token %}
+            
+            Enter Book name:  <input type="text" name="book_bookname" value="{{book.bookname}}"> <br>
+            Enter Author name: <input type="text" name="book_author" value="{{book.author}}"> <br>
+            Enter Price : <input type="text" name="book_price" value="{{book.price}}"> <br>
+            Enter Describe: <input type="text" name="book_describe" value="{{book.describe}}"> <br>
+           
+                
+            
+            <input type="submit" >
+        </form>
+
+        {% endfor %}
+   
+        {% endblock %}
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% extends 'book.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>view</title>
+</head>
+<body>
+    {% block content %}
+    <center>
+    <h1> List of book</h1>
+    <div class="p-3 mb-2 bg-light text-dark">
+        {% for book in book %}
+        {% for u in users %}
+
+    <p>{{u.pic.url}}</p>
+    <img src="{{u.pic.url}}">
+
+
+    <a href='{{u.pic.url}}'
+    bookname : {{book.bookname}} <br>
+    author: {{book.author}} <br>
+    price: {{book.price}}<br>
+    describe: {{book.describe}}<br>
+<a href='/book/book/'>Add New</a><br><br>
+    <a href="bookupdate/{{book.id}}">Update</a><br><br>
+    <a href="bookdelete/{{book.id}}">Delete</a><br><br>
+
+    {% empty %}
+        There are no Books availble.
+    {% endfor %}
+    {% endfor %}
+
+{% endblock %}
+</center>
+</div>
+</body>
+</html>

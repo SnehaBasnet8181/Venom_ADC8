@@ -1,0 +1,30 @@
+{% extends 'customer.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>view</title>
+</head>
+<body>
+    {% block content %}
+    
+    <h2> List of Customer</h2>
+    {% for customer in customer %}
+    name : {{customer.customerName}} <br>
+    email: {{customer.customerEmail}} <br>
+    phoneno: {{customer.customerPhoneNo}}<br>
+    address: {{customer.customerAddress}}<br>
+    <a href='/book/customer/'>Add New</a><br><br>
+    <a href="customerupdate/{{customer.id}}">Update</a><br><br>
+    <a href="customerdelete/{{customer.id}}">Delete</a><br><br>
+
+    {% empty %}
+        There are no Customer Detail.
+    {% endfor %}
+
+{% endblock %}
+    
+</body>
+</html>

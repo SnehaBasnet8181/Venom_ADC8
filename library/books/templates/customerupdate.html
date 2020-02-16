@@ -1,0 +1,39 @@
+{% extends 'customer.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>update</title>
+</head>
+<body>
+    {% block content %}
+
+         <h2>List of Customer</h2>
+        {% for customer in customers %}
+        name : {{customer.CustomerName}} <br>
+        email: {{customer.CustomerEmail}} <br>
+        phoneno: {{customer.CustomerPhoneNo}}<br>
+        address: {{customer.CustomerAddress}}<br>
+
+        {% empty %}
+
+        <form method="post">
+            {% csrf_token %}
+            
+            Enter  name:  <input type="text" name="customer_CustomerName" value="{{customer.CustomerName}}"> <br>
+            Enter email: <input type="text" name="customer_CustomerEmail" value="{{customer.CustomerEmail}}"> <br>
+            Enter phoneno : <input type="text" name="customer_CustomerPhoneNo" value="{{customer.CustomerPhoneNo}}"> <br>
+            Enter address: <input type="text" name="customer_CustomerAddress" value="{{customer.CustomerAddress}}"> <br>
+           
+                
+            
+            <input type="submit" >
+        </form>
+
+        {% endfor %}
+   
+        {% endblock %}
+</body>
+</html>
