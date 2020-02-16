@@ -116,21 +116,7 @@ def view_book_lists(request):
     return render(request,'bookview.html',context_variable)
 
     #Search function
-def search(request):
-    if request.method=="POST":
-        srh= request.POST['sea']
-    
-        if srh:
-            match = book.objects.filter(bookname__icontains=srh)
 
-            if match:
-                return render(request,'search.html', {"sr":match})
-            else:
-                return HttpResponse('Not successful')
-        else:
-            return('Not success')
-    else:
-        return render(request, 'search.html')
 
     #Customer
 from django.shortcuts import render
